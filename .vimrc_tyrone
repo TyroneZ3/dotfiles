@@ -1,0 +1,41 @@
+"{Basic setting
+  set smartindent
+  set autoindent
+  set cindent
+  set expandtab
+  set tabstop=4
+  set shiftwidth=4
+  set nu
+  syntax on
+
+  "{set colorshceme
+    syntax enable
+    let g:solarized_termcolors=256
+    "set background=dark
+    "colorscheme solarized
+  "}
+"}
+
+"{Bundle setup
+  if &compatible
+    set nocompatible
+  end
+
+  filetype off
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+
+  "{Bundles:
+    Bundle 'gmarik/vundle'
+
+    "Define bundles via Github repos
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'vim-airline/vim-airline'
+    Bundle 'tpope/vim-surround'
+    Bundle 'ervandew/supertab'
+    Bundle 'jiangmiao/auto-pairs'
+    Bundle 'junegunn/vim-easy-align'
+  "}
+
+  filetype on
+"}

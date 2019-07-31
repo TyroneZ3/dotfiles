@@ -10,9 +10,8 @@
 
   "{set colorshceme
     syntax enable
-    let g:solarized_termcolors=256
-    "set background=dark
-    "colorscheme solarized
+    set t_Co=256
+    colorscheme torte
   "}
 "}
 
@@ -29,7 +28,7 @@
     Bundle 'gmarik/vundle'
 
     "Define bundles via Github repos
-    Bundle 'altercation/vim-colors-solarized'
+    "Bundle 'altercation/vim-colors-solarized'
     Bundle 'vim-airline/vim-airline'
     Bundle 'tpope/vim-surround'
     Bundle 'ervandew/supertab'

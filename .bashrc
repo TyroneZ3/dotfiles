@@ -3,12 +3,12 @@
 # for examples
 
 # proxy setting
-export http_proxy=socks5://127.0.0.1:10808
-export https_proxy=socks5://127.0.0.1:10808
+# export http_proxy=socks5://127.0.0.1:10808
+# export https_proxy=socks5://127.0.0.1:10808
 
 # vscode
 # alias code="/mnt/c/Users/Tyrone/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe"
-alias code="cmd.exe /c code"
+# alias code="cmd.exe /c code"
 
 # If not running interactively, don't do anything
 case $- in
@@ -64,8 +64,16 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# set __git_ps1 variables
+GIT_PS1_DESCRIBE_STYLE='contains'
+GIT_PS1_SHOWCOLORHINTS='y'
+GIT_PS1_SHOWDIRTYSTATE='y'
+GIT_PS1_SHOWSTASHSTATE='y'
+GIT_PS1_SHOWUNTRACKEDFILES='y'
+GIT_PS1_SHOWUPSTREAM='auto'
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u\[\033[00m\]@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w$(__git_ps1)\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi

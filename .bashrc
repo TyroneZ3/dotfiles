@@ -3,8 +3,8 @@
 # for examples
 
 # proxy setting
-# export http_proxy=socks5://127.0.0.1:10808
-# export https_proxy=socks5://127.0.0.1:10808
+# alias proxy_on='export ALL_PROXY=socks5://127.0.0.1:10808'
+# alias proxy_off='export ALL_PROXY='
 
 # vscode
 # alias code="/mnt/c/Users/Tyrone/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe"

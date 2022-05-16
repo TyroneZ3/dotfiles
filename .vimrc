@@ -42,6 +42,6 @@ set nocompatible
   "{set colorshceme
     syntax enable
     "set t_Co=256
-    colorscheme morning
+    colorscheme default
   "}
 "}

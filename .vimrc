@@ -1,3 +1,6 @@
+" $HOME/.config/nvim -> $HOME/.vim
+" $HOME/.config/nvim/init.vim -> $HOME/.vimrc
+
 "" You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
 " We set it explicitely to make our position clear!
 set nocompatible
@@ -41,12 +44,6 @@ set nocompatible
   set synmaxcol   =200       " Only highlight the first 200 columns.
 
   "set list                   " Show non-printable characters.
-  
-  "{Set colorshceme
-    syntax enable
-    set t_Co=256
-    colorscheme default
-  "}
 "}
 
 "{Quick tab switching
@@ -61,30 +58,39 @@ set nocompatible
 
 "{Vundle
   "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  filetype off
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
+  call plug#begin()
+  Plug 'VundleVim/Vundle.vim'
 
   "Plugin 'dense-analysis/ale'
+  
+  Plug 'kien/ctrlp.vim'
 
-  Plugin 'vim-python/python-syntax'
+  Plug 'vim-python/python-syntax'
   let g:python_highlight_all=1
 
-  Plugin 'airblade/vim-gitgutter'
+  Plug 'airblade/vim-gitgutter'
 
-  Plugin 'davidhalter/jedi-vim'
+  Plug 'davidhalter/jedi-vim'
 
-  "Plugin 'psliwka/vim-smoothie'
-
-  Plugin 'preservim/vim-markdown'
+  Plug 'preservim/vim-markdown'
   let g:vim_markdown_math=1
 
-  call vundle#end()
-  filetype plugin indent on  " Load plugins according to detected filetype.
+  Plug 'joshdick/onedark.vim'
+  let g:onedark_terminal_italics=1
+
+  call plug#end()
 "}
 
 "{Python files specific setting
   autocmd FileType python set nowrap foldmethod=indent foldlevel=99
+"}
+
+"{Set colorshceme
+  syntax enable
+  set t_Co=256
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+  colorscheme onedark
 "}
 
